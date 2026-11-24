@@ -1,0 +1,5 @@
+# dsh-parallel-session bundle layer: inserts the host plugin row.
+# The client half is discovered from package.json's dsh.client while this row runs.
+- insert:
+    - id: parallel-session
+      name: '@dsh-external/dsh-parallel-session'
