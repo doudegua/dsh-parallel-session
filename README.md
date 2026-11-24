@@ -56,10 +56,19 @@ dsh plugin --profile desktop add github:<你的账号>/dsh-parallel-session
 - 权限收敛依赖宿主挂载 `permissionPresets`；缺失时插件会 **fail-closed** 拒绝创建，而不是退回不安全默认值。
 - 插件不读取、不写入任何外部凭据；调试日志只记会话 id/模型/权限等元数据，不记用户内容。
 
-## 相关项目
+## 相关项目（同类已有实现）
 
-- [dsh-session-bridge](https://www.npmjs.com/package/dsh-session-bridge) / [dsh-bridge](https://www.npmjs.com/package/dsh-bridge)：给已有会话发消息、等回复的“会话桥”。
-- 本插件的定位不同：它开的是**新的平级会话**，重点在「继承父会话配置 + 上文交接 + 权限不越权 + 一键打开」，不是跨会话消息总线。
+DSH 生态里已经有几类相近的插件，思路不同，值得对比着用：
+
+| 项目 | 形态 | 与本插件的区别 |
+| --- | --- | --- |
+| [123dbl/dsh-side-session](https://github.com/123dbl/dsh-side-session) | 输入框「＋」菜单里的 `/side-chat` 命令，派生一个**可继续的子代理**并跳到子会话 | 用户手动触发、子代理归属父会话；没有模型驱动的上文交接与父配置继承 |
+| [xlennart/dsh-side-chat](https://github.com/xlennart/dsh-side-chat) | 主对话右侧的原生并排侧聊面板，真实 Session、按需读取父会话上下文 | 偏 UI/面板形态，上下文按需检索而非开场交接；权限/模型由用户在原生控件里选，没有“不越权”约束 |
+| [Glaz-j/dsh-parallel-chat](https://github.com/Glaz-j/dsh-parallel-chat) | `/sidechat` 发起的只读、一次性旁路问答（fork 子代理，无工具） | 只读一次问答，不能继续、不能干活 |
+| [dsh-session-bridge](https://www.npmjs.com/package/dsh-session-bridge) / [dsh-bridge](https://www.npmjs.com/package/dsh-bridge) | 给已有会话发消息、等回复的“会话桥” | 不是新会话，也不管继承与权限 |
+| **本插件** | 模型调用 `spawn_parallel_session` 开**顶层平级会话**，带上文交接与配置继承 | 强调模型主动交接、完整继承、权限永不越权/绝不完全权限、聊天卡片一键打开 |
+
+本插件的差异化是「**模型主动交接 + 平级会话 + 安全继承**」的组合；如果你需要的是并排面板或只读旁路问答，前两个项目更合适。
 
 ## 许可
 
