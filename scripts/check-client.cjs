@@ -19,7 +19,7 @@ const vm = require('node:vm')
 
 const ROOT = path.resolve(__dirname, '..')
 const CLIENT_FILE = path.join(ROOT, 'src', 'client', 'index.js')
-const PLUGIN_ID = '@dsh-external/dsh-parallel-session'
+const PLUGIN_ID = 'dsh-parallel-session'
 const TOOL_NAME = 'spawn_parallel_session'
 const SLOT_NAME = 'tool.call.toolview'
 

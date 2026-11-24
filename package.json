@@ -1,5 +1,5 @@
 {
-  "name": "@dsh-external/dsh-parallel-session",
+  "name": "dsh-parallel-session",
   "version": "0.1.0",
   "description": "平行会话：让当前会话开启一个与用户直接交互的对等会话，并把上文交接过去",
   "private": true,

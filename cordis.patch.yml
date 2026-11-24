@@ -2,4 +2,4 @@
 # The client half is discovered from package.json's dsh.client while this row runs.
 - insert:
     - id: parallel-session
-      name: '@dsh-external/dsh-parallel-session'
+      name: 'dsh-parallel-session'

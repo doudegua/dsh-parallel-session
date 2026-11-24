@@ -17,8 +17,8 @@
 
 已经以 bundle 形式安装在 `~/.dsh/profiles/desktop`：
 
-- 依赖：`"@dsh-external/dsh-parallel-session": "link:/Users/huakaifugui/Workspace/dsh-parallel-session"`
-- bundles 列表已包含 `@dsh-external/dsh-parallel-session`
+- 依赖：`"dsh-parallel-session": "link:/Users/huakaifugui/Workspace/dsh-parallel-session"`
+- bundles 列表已包含 `dsh-parallel-session`
 - host 插件（工具）与 client 插件（聊天结果卡片）都已热加载，无需重启
 
 ## 安装到别的 profile
@@ -35,7 +35,7 @@ GUI：侧栏 **Plugins → Add plugin**，输入本地目录的绝对路径
 
 ```bash
 dsh plugin --profile desktop add /Users/huakaifugui/Workspace/dsh-parallel-session
-# 然后把 @dsh-external/dsh-parallel-session 加进 profile 的 dsh.profile.bundles 并重载
+# 然后把 dsh-parallel-session 加进 profile 的 dsh.profile.bundles 并重载
 ```
 
 ## 安装（GitHub / 公共分发）
