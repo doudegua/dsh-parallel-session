@@ -45,5 +45,13 @@
     "parallel-session",
     "peer-session",
     "session-handoff"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doudegua/dsh-parallel-session.git"
+  },
+  "homepage": "https://github.com/doudegua/dsh-parallel-session#readme",
+  "bugs": {
+    "url": "https://github.com/doudegua/dsh-parallel-session/issues"
+  }
 }

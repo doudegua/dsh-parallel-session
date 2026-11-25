@@ -1,5 +1,10 @@
 # dsh-parallel-session · 平行会话
 
+[![DeepSeek Harness plugin](https://img.shields.io/badge/DeepSeek%20Harness-plugin-0ea5e9?style=flat-square)](https://github.com/doudegua/dsh-parallel-session)
+[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-2f855a.svg?style=flat-square)](LICENSE)
+
+> GitHub: https://github.com/doudegua/dsh-parallel-session
+
 给 DSH 加一个「平行会话」原语：当前会话调用工具 `spawn_parallel_session`，开启一个**与本会话平级**的顶层会话；用户可以在侧栏或结果卡片里直接点进去和它对话。当前会话把上文写进 `context` 一并交接，用户不用再对着空白输入框手打一遍。
 
 ## 它和现有两种「开新会话」的区别
@@ -38,15 +43,13 @@ dsh plugin --profile desktop add /Users/huakaifugui/Workspace/dsh-parallel-sessi
 # 然后把 dsh-parallel-session 加进 profile 的 dsh.profile.bundles 并重载
 ```
 
-## 安装（GitHub / 公共分发）
-
-仓库准备发布后（私有仓库同样适用），可以直接按 Git 源安装：
+## 安装（GitHub）
 
 ```bash
-dsh plugin --profile desktop add github:<你的账号>/dsh-parallel-session
+dsh plugin --profile desktop add github:doudegua/dsh-parallel-session
 ```
 
-或在 GUI 的 **Plugins → Add plugin** 里填 `github:<你的账号>/dsh-parallel-session`，装完 **Enable now**。
+或在 GUI 的 **Plugins → Add plugin** 里填 `github:doudegua/dsh-parallel-session`，装完 **Enable now**。
 
 `lib/` 已随仓库提交，安装后不需要再构建；想自己构建就 `bash scripts/build.sh`。
 
